@@ -1,0 +1,3 @@
+[submodule "theme"]
+	path = theme
+	url = git@gitlab.cs.fau.de:i4/tex/i4neo.git
