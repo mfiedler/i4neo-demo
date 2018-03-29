@@ -14,8 +14,8 @@
 
 \usepackage{listings}
 
-\title{i4neo}
-\subtitle{Eine moderne Beamervorlage}
+\title{i4\themename}
+\subtitle{Proposal for a modern Beamer theme}
 \date{\today}
 \author{Wolfgang Händler}
 \institute{Friedrich-Alexander-Universität Erlangen-Nürnberg}
@@ -77,6 +77,21 @@ or show \textbf{bold} results.\end{verbatim}
     \item \texttt{\textbf{Monospace Bold}}
     \item \texttt{\textbf{\textit{Monospace Bold Italic}}}
   \end{itemize}
+\end{frame}
+
+\newcommand{\colorsample}[2]{\textcolor{nDark#1}{nDark#1} (aka \textcolor{#2}{#2}) & \textcolor{n#1}{n#1} & \textcolor{nLight#1}{nLight#1}}
+\begin{frame}{Predefined Colors}
+  \begin{center}
+    \begin{tabular}{ccc}
+      \colorsample{Red}{i4red} \\
+      \colorsample{Green}{i4green} \\
+      \colorsample{Blue}{i4blue} \\
+      \colorsample{Yellow}{i4yellow} \\
+      \colorsample{Grey}{i4grey} \\
+      \textcolor{nBlack}{nBlack} \\
+      \colorbox{nBlack}{\textcolor{nWhite}{nWhite}} \\ 
+    \end{tabular}
+  \end{center}
 \end{frame}
 
 \begin{frame}{Lists}
