@@ -9,15 +9,16 @@ demo-xelatex: LATEXMK_GEN := -xelatex
 demo-lualatex: LATEXMK_GEN := -lualatex
 demo-pdflatex: LATEXMK_GEN := -pdf
 
-demo-xelatex demo-lualatex demo-pdflatex: clean
-
-demo demo-xelatex demo-lualatex demo-pdflatex: $(TARGET)
+demo demo-xelatex demo-lualatex demo-pdflatex: | clean $(TARGET)
 	test -d "$(SCREENSHOT_DIR)" || mkdir "$(SCREENSHOT_DIR)"
-	pdftoppm -scale-to 500 -f 1 -l 5 -png $< "$(SCREENSHOT_DIR)/$@"
+	pdftoppm -scale-to 500 -f 1 -l 5 -png $(TARGET) "$(SCREENSHOT_DIR)/$@"
+
+clean::
+	rm -f "$(TARGET)"
 
 mrproper::
-	rm -f "$(TARGET)" "$(SCREENSHOT_DIR)"/demo-*.png
-	test -d "$(SCREENSHOT_DIR)" && rmdir --ignore-fail-on-non-empty "$(SCREENSHOT_DIR)"
+	rm -f "$(SCREENSHOT_DIR)"/demo-*.png
+	rmdir --ignore-fail-on-non-empty "$(SCREENSHOT_DIR)" || true
 
 include theme/Makefile
 
