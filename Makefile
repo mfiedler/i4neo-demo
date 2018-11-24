@@ -3,7 +3,7 @@ TARGET := demo.pdf
 
 all: demo
 
-.PHONY: alldemo demo-xelatex demo-lualatex demo-pdflatex
+.PHONY: alldemo demo-xelatex demo-lualatex demo-pdflatex screenshots
 
 demo-xelatex: LATEXMK_GEN := -xelatex
 demo-lualatex: LATEXMK_GEN := -lualatex
