@@ -11,6 +11,8 @@ demo-pdflatex: LATEXMK_GEN := -pdf
 
 demo demo-xelatex demo-lualatex demo-pdflatex: | clean $(TARGET)
 	test -d "$(SCREENSHOT_DIR)" || mkdir "$(SCREENSHOT_DIR)"
+
+screenshots: $(TARGET)
 	pdftoppm -scale-to 500 -f 1 -l 5 -png $(TARGET) "$(SCREENSHOT_DIR)/$@"
 
 clean::
