@@ -3,13 +3,18 @@ TARGET := demo.pdf
 
 all: demo
 
-.PHONY: alldemo demo-xelatex demo-lualatex demo-pdflatex screenshots
+.PHONY: all demo screenshots
 
-demo-xelatex: LATEXMK_GEN := -xelatex
-demo-lualatex: LATEXMK_GEN := -lualatex
-demo-pdflatex: LATEXMK_GEN := -pdf
+%-xelatex:
+	$(MAKE) LATEXMK_GEN=-xelatex $*
 
-demo demo-xelatex demo-lualatex demo-pdflatex: | clean $(TARGET)
+%-lualatex:
+	$(MAKE) LATEXMK_GEN=-lualatex $*
+
+%-pdflatex:
+	$(MAKE) LATEXMK_GEN=-pdf $*
+
+demo: | clean $(TARGET)
 	test -d "$(SCREENSHOT_DIR)" || mkdir "$(SCREENSHOT_DIR)"
 
 screenshots: $(TARGET)
@@ -23,4 +28,3 @@ mrproper::
 	rmdir --ignore-fail-on-non-empty "$(SCREENSHOT_DIR)" || true
 
 include theme/Makefile
-
