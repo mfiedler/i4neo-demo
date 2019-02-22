@@ -1,6 +1,6 @@
 \documentclass[10pt]{beamer}
-
 \usetheme[book]{neo}
+
 \usepackage{appendixnumberbeamer}
 
 \usepackage{booktabs} % nice tables
@@ -13,6 +13,7 @@
 \newcommand{\themename}{\textbf{\textsc{neo}}\xspace}
 
 \usepackage{listings} % code listings
+\neoset{notes=show}
 
 \title{i4\themename}
 \subtitle{Proposal for a modern Beamer theme}
@@ -20,6 +21,7 @@
 \author{Wolfgang Händler}
 \institute{Friedrich-Alexander-Universität Erlangen-Nürnberg}
 \titlegraphic{\includegraphics[height=1.2cm]{theme/images/logo-i4-de.pdf} \hfill \includegraphics[height=1.2cm]{theme/images/logo-fau-tf-de.pdf}}
+%\neoset{progressbar=foot}
 
 \begin{document}
 
@@ -52,12 +54,15 @@
 \end{frame}
 
 \begin{frame}[fragile]{Presentation notes}
-  The theme has built-in support for pdfpc notes
+  The theme has built-in support for notes
 
   \begin{verbatim}    \pnote{Important presentation note}\end{verbatim}
 
-  go and test it in \texttt{pdfpc}!
+  \themename can not only create pdfpc files but also full note pages, either located on the side for presentation or embedded for printing
+  \begin{verbatim}    \neoset{notes=show}\end{verbatim}
   \pnote{Hi there!}
+  \pnote{We have some text in \textbf{here}!}
+  \pnote{Try to use \texttt{notes=preview-right} with \texttt{pdfpc --notes=right ./out/presentation.pdf}}
 \end{frame}
 
 \section{Elements}
@@ -214,7 +219,7 @@ or show \textbf{bold} results.\end{verbatim}
 #include <stdio.h>
 
 int main(void) {
-   printf("Hello World!"); 
+   printf("Hello World!");
 }
   \end{lstlisting}
 \end{frame}
@@ -267,19 +272,27 @@ int main(void) {
 \end{frame}
 
 {%
+
 \neoset{frametitle icon=i4}
-\setbeamertemplate{frame footer}{My custom footer}
+\neoset{footer style=standout}
+\neoset{footer=author title}
 \begin{frame}[fragile]{Header icon and frame footer}
     You can embed the i4 (or FAU) logo on the top right corner using
-    \begin{verbatim}\neoset{frametitle icon=i4}\end{verbatim}
+    \verb|    \neoset{frametitle icon=i4}|
+
+    A footer for conferences can be displayed using
+    \verb|    \neoset{footer=author title}|
+
     In adddition, \themename defines a custom beamer template to add a text to the footer. It can be set via
-    \begin{verbatim}\setbeamertemplate{frame footer}{My custom footer}\end{verbatim}
+    \verb|    \setbeamertemplate{frame footer}{My custom footer}|
+
+    To change the background color of the footer, simply use \verb|    \neoset{footer style=standout}|
 \end{frame}
 }
 
 \begin{frame}{References}
   Some references to showcase [allowframebreaks] \cite{knuth92,ConcreteMath,Simpson,Er01,greenwade93}
-  References can also be added in place as footnote\footnote{Just use a normal footnote which contains lots and lots of text and can be created using \\footnote\{\}}
+  References can also be added in place as footnote\footnote{Just use a normal footnote which contains lots and lots of text and can be created using \texttt{$\backslash$footnote\{\}}}
 \end{frame}
 
 \section{Conclusion}
