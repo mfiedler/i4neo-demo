@@ -10,6 +10,12 @@ Make sure to checkout the submodule as well, for example by using
 
 	git clone --recursive https://gitlab.cs.fau.de/i4/tex/i4neo-demo.git
 
+or -- for having the latest theme features -- by using
+
+	git clone https://gitlab.cs.fau.de/i4/tex/i4neo-demo.git
+	cd i4neo-demo
+	git submodule update --init --recursive --remote
+
 To build the demo, make sure you have a TeX distribution (like *TeX Live*)
 installed and simply run
 

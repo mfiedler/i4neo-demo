@@ -1,10 +1,11 @@
-variables:
-  GIT_SUBMODULE_STRATEGY: recursive
+before_script:
+  - git submodule sync --recursive
+  - git submodule update --init --recursive --remote
 
 compile_pdf:
   image: tianon/latex
   script:
-    - make all
+    - make demo
   artifacts:
     paths:
       - demo.pdf
