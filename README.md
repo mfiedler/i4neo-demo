@@ -16,12 +16,21 @@ or -- for having the latest theme features -- by using
 	cd i4neo-demo
 	git submodule update --init --recursive --remote
 
-To build the demo, make sure you have a TeX distribution (like *TeX Live*)
-installed and simply run
+To build the [LaTeX demo](demo.tex), make sure you have a TeX distribution
+(like [TeX Live](https://www.tug.org/texlive/)) and the util
+[Latexmk](http://personal.psu.edu/jcc8//software/latexmk-jcc/) installed.
+
+For Debian based distributions this can be achieved by executing
+
+	sudo apt-get install make texlive-full latexmk
+
+
+Afterwards simply run
 
 	make demo.pdf
 
 to create the PDF using *XeLaTeX* (predefined by the theme).
+
 
 You can use different generators like *pdfLaTeX* (which requires FiraSans.sty)
 
@@ -37,3 +46,9 @@ or explicitly the default *XeLaTeX* with
 
 Although there are a few minor differences between the three generators above
 regarding the typesetting, these should not be visible to the naked eye.
+
+
+Having Pandoc installed you can build the [Markdown example](example.md) by
+executing
+
+	make example.pdf

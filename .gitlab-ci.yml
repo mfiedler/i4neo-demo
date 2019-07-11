@@ -1,5 +1,5 @@
 before_script:
-  - apt-get update -qq && apt-get install -y -qq git
+  - apt-get update -qq && apt-get install -y -qq git pandoc
   - git submodule sync --recursive
   - git submodule update --init --recursive --remote
 
@@ -11,6 +11,8 @@ buildPDF:
     paths:
       - demo.pdf
       - demo.pdfpc
+      - example.pdf
+      - example.pdfpc
 
 
 # Testweise mit den gängen Distributionen bauen um Inkompatibilitäten schnell
@@ -23,7 +25,7 @@ buildPDF:
   before_script:
     - ln -fs /usr/share/zoneinfo/Europe/Berlin /etc/localtime
     - export DEBIAN_FRONTEND=noninteractive
-    - apt-get update -qq && apt-get install -y -qq make git texlive-full latexmk
+    - apt-get update -qq && apt-get install -y -qq make git texlive-full latexmk pandoc
     - git submodule sync --recursive
     - git submodule update --init --recursive --remote
   script:
@@ -31,7 +33,10 @@ buildPDF:
     - make demo
   artifacts:
     paths:
-      - thesis.pdf
+      - demo.pdf
+      - demo.pdfpc
+      - example.pdf
+      - example.pdfpc
 
 # Latest Ubuntu LTS Release
 ubuntuLatest:

@@ -1,5 +1,6 @@
 SCREENSHOT_DIR := $(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))/.screenshots
-TARGET := demo.pdf
+TARGET_LATEX := demo.pdf
+TARGET_MARKDOWN := example.pdf
 
 all: demo
 
@@ -14,16 +15,16 @@ all: demo
 %-pdflatex:
 	$(MAKE) LATEXMK_GEN=-pdf $*
 
-demo: | clean $(TARGET)
+demo: | clean $(TARGET_LATEX) $(TARGET_MARKDOWN)
 	test -d "$(SCREENSHOT_DIR)" || mkdir "$(SCREENSHOT_DIR)"
 
-screenshots: $(TARGET)
-	pdftoppm -scale-to 500 -f 1 -l 5 -png $(TARGET) "$(SCREENSHOT_DIR)/$@"
+screenshots: $(TARGET_LATEX)
+	pdftoppm -scale-to 500 -f 1 -l 5 -png $(TARGET_LATEX) "$(SCREENSHOT_DIR)/$@"
 
 clean::
-	rm -f "$(TARGET)"
+	rm -f "$(TARGET_LATEX)" "$(TARGET_MARKDOWN)"
 
-mrproper::
+mrproper:: clean
 	rm -f "$(SCREENSHOT_DIR)"/demo-*.png
 	rmdir --ignore-fail-on-non-empty "$(SCREENSHOT_DIR)" || true
 
