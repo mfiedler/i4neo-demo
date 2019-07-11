@@ -54,8 +54,3 @@ debianTesting:
 debianOldStable:
   extends: .debianoide
   image: debian:oldstable
-
-# Wir halten gerne an alten Sachen fest.
-debianOldOldStable:
-  extends: .debianoide
-  image: debian:oldoldstable
