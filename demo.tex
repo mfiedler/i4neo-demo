@@ -1,4 +1,6 @@
-\documentclass[10pt]{beamer}
+%\documentclass[10pt]{beamer}
+% or try: 
+\documentclass[aspectratio=1610,12pt]{beamer}
 \usetheme[book]{neo}
 
 \usepackage{appendixnumberbeamer}
@@ -15,7 +17,7 @@
 \usepackage{listings} % code listings
 \neoset{notes=show}
 
-\title{i4\themename}
+\title[i4\themename Theme Demo]{i4\themename}
 \subtitle{Proposal for a modern Beamer theme}
 \date{\today}
 \author{Wolfgang Händler}
@@ -25,7 +27,7 @@
 
 \begin{document}
 
-\maketitle[intern]
+\maketitle[extern]
 
 \begin{frame}{Table of Contents}
   \setbeamertemplate{section in toc}[sections numbered]
@@ -216,11 +218,12 @@ or show \textbf{bold} results.\end{verbatim}
   \end{columns}
 \end{frame}
 \begin{frame}[fragile]{Code}
-  \begin{lstlisting}[language=C]
+  \begin{lstlisting}[language=C,basicstyle=\ttfamily]
 #include <stdio.h>
 
-int main(void) {
-   printf("Hello World!");
+int main() {
+    printf("Hello World!");
+    return 0;
 }
   \end{lstlisting}
 \end{frame}
