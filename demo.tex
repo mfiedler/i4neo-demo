@@ -1,3 +1,7 @@
+% Set to Handout if filename contains "_handout"
+\RequirePackage{substr}
+\IfSubStringInString{\detokenize{_handout}}{\jobname}{\PassOptionsToClass{handout}{beamer}}{}
+
 \documentclass[10pt]{beamer}
 % or try: \documentclass[aspectratio=1610,12pt]{beamer}
 \usetheme[book]{neo}
@@ -14,6 +18,19 @@
 \newcommand{\themename}{\textbf{\textsc{neo}}\xspace}
 
 \usepackage{listings} % code listings
+
+% Multiple slides on a page if filename contains "_2x1" or "_2x2"
+\IfSubStringInString{\detokenize{_2x2}}{\jobname}{
+	\pgfpagesuselayout{4 on 1}[letterpaper,landscape,border shrink=2.5mm]
+	\neoset{background=white}
+}{
+	\IfSubStringInString{\detokenize{_1x2}}{\jobname}{
+		\pgfpagesuselayout{2 on 1}[letterpaper,border shrink=5mm]
+		\neoset{background=white}
+	}{}
+}
+
+% Show notes in neo
 \neoset{notes=show}
 
 \title[i4\themename Theme Demo]{i4\themename}
@@ -36,7 +53,6 @@
 \section{Introduction}
 
 \begin{frame}[fragile]
-
   The \themename theme is a Beamer theme with minimal visual noise
   based on the \href{https://github.com/matze/mtheme}{\textsc{Metropolis} Beamer Theme} by Matthias Vogelgesang and inspired by the \href{https://github.com/hsrmbeamertheme/hsrmbeamertheme}{\textsc{hsrm} Beamer Theme} by Benjamin Weiss.
 
@@ -314,7 +330,8 @@ int main() {
 
 \end{frame}
 
-\begin{frame}[standout]
+% Not visible in handout
+\begin{frame}<handout:0>[standout]
   Questions?
 \end{frame}
 

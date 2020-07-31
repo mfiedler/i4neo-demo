@@ -268,5 +268,6 @@ License](http://creativecommons.org/licenses/by-sa/4.0/).
 
 ## {.standout}
 
-Questions?
+\only<handout:0>{Questions?}
+\only<beamer:0>{Have Fun!}
 
