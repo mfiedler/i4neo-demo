@@ -25,7 +25,7 @@ buildPDF:
   before_script:
     - ln -fs /usr/share/zoneinfo/Europe/Berlin /etc/localtime
     - export DEBIAN_FRONTEND=noninteractive
-    - apt-get update -qq && apt-get install -y -qq make git texlive-full latexmk pandoc
+    - apt-get update -qq && apt-get install -y -qq eatmydata && eatmydata apt-get install -y -qq make git texlive-full latexmk pandoc
     - git submodule sync --recursive
     - git submodule update --init --recursive --remote
   script:
