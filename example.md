@@ -16,7 +16,9 @@ toc: true
 # Overall font size
 fontsize: 10pt
 # Additional (LaTeX) commands
-header-includes: \usepackage{pgfplots} \neoset{notes=show}
+header-includes:
+ - \usepackage{pgfplots}
+ - \neoset{notes=show}
 # Bibliography
 bibliography: demo
 biblio-title: References
