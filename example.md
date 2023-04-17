@@ -95,7 +95,7 @@ The built-in support for notes is available as well
 
         \pnote{Important presentation note}
 
-**neo** can not only create pdfpc files but also full note
+**neo** can not only create pdfpc comments but also full note
 pages, either located on the side for presentation or embedded for
 printing
 

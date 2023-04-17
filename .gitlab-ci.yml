@@ -7,6 +7,4 @@ buildPDF:
   artifacts:
     paths:
       - demo.pdf
-      - demo.pdfpc
       - example.pdf
-      - example.pdfpc
