@@ -322,6 +322,13 @@ int main() {
   References can also be added in place as footnote\footnote{Just use a normal footnote which contains lots and lots of text and can be created using \texttt{$\backslash$footnote\{\}}}
 \end{frame}
 
+% Not visible in handout
+\begin{frame}<handout:0>[standout]
+  Standout!
+
+  Next comes the conclusion!
+\end{frame}
+
 \section{Conclusion}
 
 \begin{frame}{Summary}
@@ -336,11 +343,15 @@ int main() {
 
   \begin{center}\ccbysa\end{center}
 
-\end{frame}
+  \visible<2>{
+    \neoset{block=fill}
+    \begin{center}
+      \begin{block}{Questions?}
+        user@cs.fau.de
+      \end{block}
+    \end{center}
+  }
 
-% Not visible in handout
-\begin{frame}<handout:0>[standout]
-  Questions?
 \end{frame}
 
 \appendix
