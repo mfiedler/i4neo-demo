@@ -1,5 +1,8 @@
 # i4neo Demo
 
+This is a demo of the i4neo theme.
+For a template for your own talks, see [i4neo-talk](https://gitlab.cs.fau.de/i4/tex/i4neo-talk).
+
 ![Titlepage](.screenshots/demo-01.png)
 ![Table of contents](.screenshots/demo-02.png)
 ![Section](.screenshots/demo-03.png)
