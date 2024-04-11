@@ -7,8 +7,7 @@ author: Wolfgang Händler
 institute: 'Friedrich-Alexander-Universität Erlangen-Nürnberg'
 # Some logos on the title page?
 titlegraphic:
- - theme/images/logo-i4-de.pdf
- - theme/images/logo-fau-tf-de.pdf
+ - theme/images/logo-i4.pdf
 # Internal or external title background image?
 titletype: intern
 # Show TOC?
