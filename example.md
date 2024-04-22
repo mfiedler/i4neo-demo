@@ -94,15 +94,18 @@ The built-in support for notes is available as well
 
         \pnote{Important presentation note}
 
-**neo** can not only create pdfpc comments but also full note
-pages, either located on the side for presentation or embedded for
-printing
+**neo** can not only create embedded [pdfpc](https://github.com/pdfpc/pdfpc) notes with
+
+        \neoset{notes=pdfpc}
+
+but also full note pages (e.g., for printing)
 
         \neoset{notes=show}
 
 \pnote{Hi there!}
 \pnote{We have some text in \textbf{here}!}
 \pnote{Try to use \texttt{notes=preview-right} with \texttt{pdfpc --notes=right ./out/presentation.pdf}}
+\pnote<1>{By the way, the command is overlay-aware!}
 
 
 # Elements
