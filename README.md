@@ -3,12 +3,6 @@
 This is a demo of the i4neo theme.
 For a template for your own talks, see [i4neo-talk](https://gitlab.cs.fau.de/i4/tex/i4neo-talk).
 
-![Titlepage](.screenshots/demo-01.png)
-![Table of contents](.screenshots/demo-02.png)
-![Section](.screenshots/demo-03.png)
-![Plain slide](.screenshots/demo-04.png)
-![Slide with title](.screenshots/demo-05.png)
-
 Make sure to checkout the submodule as well, for example by using
 
 	git clone --recursive https://gitlab.cs.fau.de/i4/tex/i4neo-demo.git
@@ -55,3 +49,9 @@ Having Pandoc installed you can build the [Markdown example](example.md) by
 executing
 
 	make example.pdf
+
+![Titlepage](.screenshots/demo-01.png)
+![Table of contents](.screenshots/demo-02.png)
+![Section](.screenshots/demo-03.png)
+![Plain slide](.screenshots/demo-04.png)
+![Slide with title](.screenshots/demo-05.png)
